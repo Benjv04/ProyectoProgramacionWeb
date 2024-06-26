@@ -16,6 +16,12 @@
         body {
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
+        .inises{
+            background-image: url('{% static "waggypetshop/images/iniciosesion.jpg" %}');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
     </style>
 </head>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -89,7 +95,7 @@
               <div id="mensaje2" class="errores">Es necesario la contraseña</div>
           </div>
           <div class="signup_link">
-              No tienes cuenta? <a href="register.html" style="  color: orange; text-decoration: none;">Crear cuenta</a>
+              No tienes cuenta? <a href="{% url 'register' %}" style="  color: orange; text-decoration: none;">Crear cuenta</a>
           </div>
           <button type="submit" id="bEnviar" class="btn btn-primary w-100 mt-3">Iniciar Sesión</button>
       </form>

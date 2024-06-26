@@ -318,7 +318,7 @@ margin-inline-end: auto;
 
 /*ACA SEGUIMIENTO*/
 .bodyseguimiento{
-  background-image: url(IMG/seguimiento4.jpg);
+  background-image: url(../images/seguimiento4.jpg);
   background-size: cover;
 }
 
