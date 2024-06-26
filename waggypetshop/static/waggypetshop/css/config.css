@@ -1,0 +1,337 @@
+  /* inicio sign in */
+
+  html,
+  body {
+    height: 100%;
+  }
+  
+  .form-signin {
+    max-width: 330px;
+    padding: 1rem;
+  }
+  
+  .form-signin .form-floating:focus-within {
+    z-index: 2;
+  }
+  
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  
+ /* fin de sign in */
+
+  /* container validacion carrito*/
+
+  .container {
+    max-width: 960px;
+  }
+
+
+
+body {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: rgb(var(--bs-tertiary-color-rgb));
+  }
+
+  /* Customizar Carrousel */
+  
+  /* Carousel base*/
+  .carousel {
+    margin-bottom: 4rem;
+  }
+
+  .carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+  }
+  
+  /* Altura imagen*/
+  .carousel-item {
+    height: 32rem;
+  }
+  
+  
+  /* MARKETING */
+  
+  /* Centrar el texto*/
+  .marketing .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  /* Margenes */
+  .marketing .col-lg-4 p {
+    margin-right: .75rem;
+    margin-left: .75rem;
+  }
+  
+  /* Featurettes*/
+  
+  .featurette-divider {
+    margin: 5rem 0; 
+  }
+  
+
+  .featurette-heading {
+    letter-spacing: -.05rem;
+  }
+  
+
+  /* Carrousel CSS*/
+  
+  @media (min-width: 40em) {
+    .carousel-caption p {
+      margin-bottom: 1.25rem;
+      font-size: 1.25rem;
+      line-height: 1.4;
+    }
+  
+    .featurette-heading {
+      font-size: 50px;
+    }
+  }
+  
+  @media (min-width: 62em) {
+    .featurette-heading {
+      margin-top: 7rem;
+    }
+  }
+  
+
+  .custom1-background {
+    background-image: url('https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2019/02/tienda-animales.jpg?tf=1200x');
+    background-size: cover;
+    background-position: center; 
+  }
+
+  .custom-background {
+    background-image: url('https://www.24horas.cl/24horas/site/artic/20230802/imag/foto_0000001320230802190919/pets-ga60cd5525_1280.jpg');
+    background-size: cover; 
+    background-position: center; 
+  }
+
+
+  .custom3-background {
+    background-image: url('https://www.semana.com/resizer/62vPuBRi1c5z6hkwnikPI7rKVwg=/1280x720/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/W5NSTUXPANHAFO4X2HAJ7PI3VM.jpg');
+    background-size: cover;
+    background-position: center; 
+  }
+
+   /*CARD*/
+
+  .card-container {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center; 
+}
+.card {
+    width: 18rem; 
+    margin: 10px; 
+}
+
+/*CARRITO*/
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.b-example-divider {
+  width: 100%;
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.btn-bd-primary {
+  --bd-violet-bg: #712cf9;
+  --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bd-violet-bg);
+  --bs-btn-border-color: var(--bd-violet-bg);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: #6528e0;
+  --bs-btn-hover-border-color: #6528e0;
+  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: #5a23c8;
+  --bs-btn-active-border-color: #5a23c8;
+}
+
+.bd-mode-toggle {
+  z-index: 1500;
+}
+
+.bd-mode-toggle .dropdown-menu .active .bi {
+  display: block !important;
+}
+
+
+.imgcat{
+  width: 500px;
+  height: 400px;
+
+}
+
+/*Mensajes de errores*/
+.errores{
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.3); 
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+   -o-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  background: rgb(218, 121, 121);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  color:white;
+  display: none; 
+  font-size: 14px; 
+  margin-top: -80px; 
+  margin-left:·340px;
+  padding: 10px;
+  position:absolute;
+}
+
+
+
+/* NAVBAR ACA*/
+.ico-logo {
+  width: 130px; 
+  height: 45px; 
+}
+
+.navbar-nav .nav-item {
+  margin: 0 5px;
+}
+
+.navbar-nav {
+  flex-grow: 1; 
+}
+
+@media (max-width: 768px) {
+  .navbar-nav .nav-item {
+    margin: 5px 0;
+  }
+  .navbar-nav-scroll {
+    --bs-scroll-height: auto;
+  }
+}
+
+
+/*ACA INICIO SESION*/
+.inises{
+  background-image: url(IMG/iniciosesion.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.form-container_login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 450px;
+ 
+
+}
+
+.form-card_login {
+  margin-top: 150px;
+  padding: 2rem;
+  border: 0px solid ;
+  border-radius: 1rem;
+  background-color: #f1f1f1;
+  width: 25%;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-left: 750px;
+}
+
+/*pie pagina*/
+.container_mt-5{
+margin-inline-end: auto;
+}
+
+/*CAMBIOS DIV FORM REGISTER*/
+.form-container_register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-card_register {
+  padding: 2rem;
+  border: 1px solid ;
+  border-radius: 1rem;
+  background-color: #f1f1f1;
+  width: 25%;
+  background-color: rgba(0, 0, 0, .3);
+  margin-left: -880px;
+}
+
+.registerr{
+  background-image: url(IMG/register.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*ACA SEGUIMIENTO*/
+.bodyseguimiento{
+  background-image: url(IMG/seguimiento4.jpg);
+  background-size: cover;
+}
+
+.container-segui{
+  position: absolute; 
+  top: 55%; 
+  left: 25%; 
+  transform: translate(-50%, -50%); 
+  width: 500px; 
+  height: 400px; 
+  background-color: rgba(225, 220, 220, 0.3);
+  border: 0px solid #282a35; 
+  padding: 20px;
+  border-radius: 10%;
+  text-align: center;
+}
