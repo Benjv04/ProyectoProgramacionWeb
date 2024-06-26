@@ -9,15 +9,17 @@
     <link rel="stylesheet" href="{% static 'waggypetshop/css/config.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <style>body{
-      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    }</style>
+    <style>
+      body {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      }
+    </style>
 </head>
 <body data-bs-theme="light">
-  <!--NAV MENU NAVEGACION-->  
+  <!--NAV MENU NAVEGACION-->
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="{% url 'index' %}">
         <img src="{% static 'waggypetshop/images/logo.png' %}" alt="Logo" width="40" height="32" class="ico-logo"> 
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,36 +28,36 @@
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll w-100 d-flex justify-content-between">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Nosotros.html">Nosotros</a>
+            <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Productos
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="perros.html">Comida para perros</a></li>
-              <li><a class="dropdown-item" href="gatos.html">Comida para gatos</a></li>
+              <li><a class="dropdown-item" href="{% url 'perros' %}">Comida para perros</a></li>
+              <li><a class="dropdown-item" href="{% url 'gatos' %}">Comida para gatos</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="otros.html">Otros productos</a></li>
+              <li><a class="dropdown-item" href="{% url 'otros' %}">Otros productos</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Contacto.html">Contacto</a>
+            <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="carrito.html">Carrito</a>
+            <a class="nav-link" href="{% url 'carrito' %}">Carrito</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="seguimiento.html">Sigue tu compra</a>
+            <a class="nav-link" href="{% url 'seguimiento' %}">Sigue tu compra</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link margen" href="inicioSesion.html">Inicia sesion</a>
+            <a class="nav-link margen" href="{% url 'inicioSesion' %}">Inicia sesión</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="register.html">Regístrate</a>
+            <a class="nav-link" href="{% url 'register' %}">Regístrate</a>
           </li>
         </ul>
         <form class="d-flex" role="search">
@@ -66,134 +68,132 @@
     </div>
   </nav>
 
-<!--CAROUSEL-->
-<main>
-
-  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  <!--CAROUSEL-->
+  <main>
+    <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active custom1-background">
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1>Entretención para ellos</h1>
+              <p><a class="btn btn-lg btn-light" href="#">Ver más</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item custom-background">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Productos para su pelaje</h1>
+              <p><a class="btn btn-lg btn-light" href="#">Ver más</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item custom3-background">
+          <div class="container">
+            <div class="carousel-caption text-end">
+              <h1>Consigue una buena alimentación para tus mascotas</h1>
+              <p><a class="btn btn-lg btn-light" href="#">Ver más</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active custom1-background">
-        <div class="container">
-          <div class="carousel-caption text-start">
-            <h1>Entretencion para ellos</h1>
-            <p><a class="btn btn-lg btn-light" href="#">Ver mas</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item custom-background">
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>Productos para su pelaje</h1>
-            <p><a class="btn btn-lg btn-light" href="#">Ver mas</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item custom3-background">
-        <div class="container">
-          <div class="carousel-caption text-end">
-            <h1>Consigue una buena alimentacion para tus mascotas</h1>
-            <p><a class="btn btn-lg btn-light" href="#">Ver mas</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
 
-<!-- Titulo -->
-  <div class="container marketing">
-    <h2>Las marcas favoritas de tu mascota</h2>
-    <!-- CARD -->
-    <div class="card-container">
-      <div class="card">
+    <!-- Título -->
+    <div class="container marketing">
+      <h2>Las marcas favoritas de tu mascota</h2>
+      <!-- CARD -->
+      <div class="card-container">
+        <div class="card">
           <img class="card-img-top" src="{% static 'waggypetshop/images/royalcanin.jpg' %}" alt="Card image cap">
           <div class="card-body">
-              <h5 class="card-title">Royal Canin</h5>
-              <p class="card-text">Descubre la nutrición a medida para tu mascota con un solo clic.</p>
-              <a href="#" class="btn btn-light">Ver productos</a>
+            <h5 class="card-title">Royal Canin</h5>
+            <p class="card-text">Descubre la nutrición a medida para tu mascota con un solo clic.</p>
+            <a href="#" class="btn btn-light">Ver productos</a>
           </div>
-      </div>
-      <div class="card">
+        </div>
+        <div class="card">
           <img class="card-img-top" src="{% static 'waggypetshop/images/purina.jpg' %}" alt="Card image cap">
           <div class="card-body">
-              <h5 class="card-title">Purina</h5>
-              <p class="card-text">Conoce las diferentes variedades de alimento húmedo.</p>
-              <a href="#" class="btn btn-light">Ver productos</a>
+            <h5 class="card-title">Purina</h5>
+            <p class="card-text">Conoce las diferentes variedades de alimento húmedo.</p>
+            <a href="#" class="btn btn-light">Ver productos</a>
           </div>
-      </div>
-      <div class="card">
+        </div>
+        <div class="card">
           <img class="card-img-top" src="{% static 'waggypetshop/images/pedigree.jpg' %}" alt="Card image cap">
           <div class="card-body">
-              <h5 class="card-title">Pedigree</h5>
-              <p class="card-text">Descubre nuestra gama de alimento seco</p>
-              <a href="#" class="btn btn-light">Ver productos</a>
+            <h5 class="card-title">Pedigree</h5>
+            <p class="card-text">Descubre nuestra gama de alimento seco</p>
+            <a href="#" class="btn btn-light">Ver productos</a>
           </div>
+        </div>
       </div>
-  </div>
-<!-- FIN DE CARD -->
+      <!-- FIN DE CARD -->
 
-    <!-- INICIO DE FOTOS CON TEXTO "3" -->
+      <!-- INICIO DE FOTOS CON TEXTO "3" -->
 
-    <hr class="featurette-divider">
+      <hr class="featurette-divider">
 
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">Tu perro y tu salud mental <span class="text-body-secondary"></span></h2>
-        <p class="lead">Los perros y los humanos siempre han tenido una estrecha conexión, principalmente porque han evolucionado uno junto al otro con el tiempo.</p>
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading fw-normal lh-1">Tu perro y tu salud mental <span class="text-body-secondary"></span></h2>
+          <p class="lead">Los perros y los humanos siempre han tenido una estrecha conexión, principalmente porque han evolucionado uno junto al otro con el tiempo.</p>
+        </div>
+        <div class="col-md-5">
+          <img src="{% static 'waggypetshop/images/salud.jpg' %}" alt="">
+        </div>
       </div>
-      <div class="col-md-5">
-        <img src="{% static 'waggypetshop/images/salud.jpg' %}" alt="">
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 order-md-1">
+          <h2 class="featurette-heading fw-normal lh-1">Estudio asegura que tener gatos como mascota aumentaría el riesgo de esquizofrenia <span class="text-body-secondary"></span></h2>
+          <p class="lead">Un polémico estudio establece que tener gatos como mascota podría aumentar el riesgo de padecer esquizofrenia, y el motivo sería por parásitos tóxicos al interior de los felinos.</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img src="{% static 'waggypetshop/images/gato.jpg' %}" alt="">
+        </div>
       </div>
-    </div>
 
-    <hr class="featurette-divider">
+      <hr class="featurette-divider">
 
-    <div class="row featurette">
-      <div class="col-md-7 order-md-1">
-        <h2 class="featurette-heading fw-normal lh-1">Estudio asegura que tener gatos como mascota aumentaría el riesgo de esquizofrenia <span class="text-body-secondary"></span></h2>
-        <p class="lead">Un polémico estudio establece que tener gatos como mascota podría aumentar el riesgo de padecer esquizofrenia, y el motivo sería por parásitos tóxicos al interior de los felinos.</p>
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading fw-normal lh-1">El cuidado de la salud de tu perro <span class="text-body-secondary"></span></h2>
+          <p class="lead">Un peso saludable es la clave para la salud y el bienestar de tu perro. Obtén más información sobre las cuatro formas sencillas de mantener a tu perro en un peso saludable y en buena forma.</p>
+        </div>
+        <div class="col-md-5">
+          <img src="{% static 'waggypetshop/images/perro2.png' %}" alt="">
+        </div>
       </div>
-      <div class="col-md-5 order-md-1">
-        <img src="{% static 'waggypetshop/images/gato.jpg' %}" alt="">
-      </div>
-    </div>
 
-    <hr class="featurette-divider">
+      <hr class="featurette-divider">
 
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">El cuidado de la salud de tu perro <span class="text-body-secondary"></span></h2>
-        <p class="lead">Un peso saludable es la clave para la salud y el bienestar de tu perro. Obtén más información sobre las cuatro formas sencillas de mantener a tu perro en un peso saludable y en buena forma.</p>
-      </div>
-      <div class="col-md-5">
-        <img src="{% static 'waggypetshop/images/perro2.png' %}" alt="">
-      </div>
-    </div>
+      <!-- FINAL DE FOTOS CON TEXTO "3" -->
 
-    <hr class="featurette-divider"> 
+    </div><!-- FINAL DE CONTAINER -->
 
-    <!-- FINAL DE FOTOS CON TEXTO "3" -->
-
-  </div><!-- FINAL DE CONTAINER -->
-
-  <!-- FOOTER -->
-  <footer class="container">
-    <p class="float-end"><a href="#">Volver arriba</a></p>
-    <p>&copy; 2017–2024 WAGGY'S Pet Shop, Inc. &middot; <a href="#">Privacidad</a> &middot; <a href="#">Terminos</a></p>
-  </footer>
-</main>
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
+    <!-- FOOTER -->
+    <footer class="container">
+      <p class="float-end"><a href="#">Volver arriba</a></p>
+      <p>&copy; 2017–2024 WAGGY'S Pet Shop, Inc. &middot; <a href="#">Privacidad</a> &middot; <a href="#">Términos</a></p>
+    </footer>
+  </main>
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
