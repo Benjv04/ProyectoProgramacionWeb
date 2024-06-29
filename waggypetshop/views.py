@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Usuario
+from .forms import UsuarioForm
 
 # Create your views here.
 def index(request):
@@ -31,3 +33,13 @@ def register(request):
 
 def seguimiento(request):
     return render(request, 'waggypetshop/seguimiento.html')
+
+def usuario_form(request):
+    if request.method == 'POST':
+        form = UsuarioForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')  
+    else:
+        form = UsuarioForm()
+    return render(request, 'waggypetshop/usuario_form.html', {'form': form})

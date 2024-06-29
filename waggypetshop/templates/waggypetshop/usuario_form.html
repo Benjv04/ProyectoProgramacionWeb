@@ -1,0 +1,171 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link type="text/css" rel="stylesheet" href="config.css">
+    <link rel="stylesheet" href="{% static 'waggypetshop/css/config.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        .registerr {
+            background-image: url('{% static "waggypetshop/images/register.jpg" %}');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .errores {
+            display: none;
+            color: red;
+        }
+    </style>
+</head>
+<body data-bs-theme="light" class="registerr">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'index' %}">
+                <img src="{% static 'waggypetshop/images/logo.png' %}" alt="Logo" width="40" height="32" class="ico-logo"> 
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll w-100 d-flex justify-content-between">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Productos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'perros' %}">Comida para perros</a></li>
+                            <li><a class="dropdown-item" href="{% url 'gatos' %}">Comida para gatos</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{% url 'otros' %}">Otros productos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'carrito' %}">Carrito</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'seguimiento' %}">Sigue tu compra</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link margen" href="{% url 'inicioSesion' %}">Inicia sesión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'usuario_form' %}">Regístrate</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="¿Qué buscas?" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+<br>
+<br>
+<main class="form-container_register">
+    <div class="form-card_register">
+        <h2 class="mb-4">Registro</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="id_nombre_usuario" class="form-label">Usuario:</label>
+                <div class="center">{{ form.nombre_usuario }}</div>
+                <div id="mensaje1" class="errores">Es necesario el nombre de usuario</div>
+            </div>
+            <div class="mb-3">
+                <label for="id_email" class="form-label">Email:</label>
+                <div class="center">{{ form.email }}</div>
+                <div id="mensaje2" class="errores">Es necesario el email</div>
+            </div>
+            <div class="mb-3">
+                <label for="id_contraseña" class="form-label">Contraseña:</label>
+                <div class="center">{{ form.contraseña }}</div>
+                <div id="mensaje3" class="errores">Es necesario la contraseña</div>
+            </div>
+            <div class="mb-3">
+                <label for="id_confirm_password" class="form-label">Confirmar Contraseña:</label>
+                <div class="center">{{ form.confirm_password }}</div>
+                <div id="mensaje4" class="errores">Las contraseñas no coinciden</div>
+            </div>
+            <div class="signup_link">
+                Ya tienes cuenta? <a href="{% url 'inicioSesion' %}">Iniciar sesión</a>
+            </div>
+            <button type="submit" id="bEnviar" class="btn btn-primary w-100 mt-3">Guardar</button>
+        </form>
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="container mt-5">
+    <p class="float-end"><a href="#">Volver arriba</a></p>
+    <p>&copy; 2017–2024 WAGGY'S Pet Shop, Inc. &middot; <a href="#">Privacidad</a> &middot; <a href="#">Términos</a></p>
+</footer>
+
+<script>
+/* Script de JQUERY */
+$(document).ready(function() {
+    $("#bEnviar").click(function(e){
+        e.preventDefault();
+        var nombre = $("#id_nombre_usuario").val();
+        var email = $("#id_email").val();
+        var password = $("#id_contraseña").val();
+        var confirmarPassword = $("#id_confirm_password").val();
+
+        var valid = true;
+
+        if(nombre === ""){
+            $("#mensaje1").fadeIn();
+            valid = false;
+        } else {
+            $("#mensaje1").fadeOut();
+        }
+
+        if(email === ""){
+            $("#mensaje2").fadeIn();
+            valid = false;
+        } else {
+            $("#mensaje2").fadeOut();
+        }
+
+        if(password === ""){
+            $("#mensaje3").fadeIn();
+            valid = false;
+        } else {
+            $("#mensaje3").fadeOut();
+        }
+
+        if(confirmarPassword === "" || password !== confirmarPassword){
+            $("#mensaje4").fadeIn();
+            valid = false;
+        } else {
+            $("#mensaje4").fadeOut();
+        }
+
+        if(valid) {
+            alert('Registrado correctamente.');
+            $(this).off('submit').submit();
+        }
+    });
+});
+</script>
+</body>
+</html>
